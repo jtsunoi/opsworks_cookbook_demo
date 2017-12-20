@@ -1,0 +1,8 @@
+-- test データベースが存在したら削除
+DROP DATABASE IF EXISTS test;
+
+-- 匿名ユーザの削除
+DELETE FROM mysql.user WHERE user = '';
+
+-- 権限情報をフラッシュ
+FLUSH PRIVILEGES;
