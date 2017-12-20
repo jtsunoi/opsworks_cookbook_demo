@@ -68,14 +68,3 @@ execute 'create_user' do
     action :nothing
 end
 
-#⑥設定ファイルを編集する
-file '/etc/my.cnf' do
-  file = Chef::Util::FileEdit.new("/etc/my.cnf")
-  file.insert_line_if_no_match('#####追加設定', <<-"EOH"
-#####追加設定
-character-set-server = utf8
-default_password_lifetime = 0
-EOH
-  )
-  content file.send(:editor).lines.join
-end
