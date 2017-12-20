@@ -11,7 +11,7 @@ rpm_package "mysql-community-release" do
 end
 
 #②インストール！（変更なし）
-package 'mysql-community-server' do
+package 'mysql57-server' do
     action [ :install ]
 end
 
